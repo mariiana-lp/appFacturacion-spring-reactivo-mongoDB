@@ -5,11 +5,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.UUID;
 
-@Document(collection ="inventario" )
-public class InventarioDTOReactivo {
+@Document(collection = "productos")
+public class ProductoDTOReactivo {
     @Id
     private String id = UUID.randomUUID().toString().substring(0,10);
-    private int cantidadActual;
-    private int minimo;
-    private int maximo;
+    private String nombreProducto;
+    private int precioUnidad;
 }

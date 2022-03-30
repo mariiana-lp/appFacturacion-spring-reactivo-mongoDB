@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-@Document(collation = "facturas")
+@Document(collection = "facturas")
 public class FacturaDTOReactiva {
     @Id
     private String id = UUID.randomUUID().toString().substring(0,10);
