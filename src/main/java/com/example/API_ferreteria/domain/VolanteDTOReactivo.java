@@ -13,15 +13,19 @@ public class VolanteDTOReactivo {
     private String id = UUID.randomUUID().toString().substring(0,10);
     private String nombreProveedor;
     private String documentoIdentidadProveedor;
-    private List<String> productos;
+    private List<ProductoDTOReactivo> productos;
     private LocalDate fecha;
 
-    public VolanteDTOReactivo(String id, String nombreProveedor, String documentoIdentidadProveedor, List<String> productos, LocalDate fecha) {
+    public VolanteDTOReactivo(String id, String nombreProveedor, String documentoIdentidadProveedor, List<ProductoDTOReactivo> productos, LocalDate fecha) {
         this.id = id;
         this.nombreProveedor = nombreProveedor;
         this.documentoIdentidadProveedor = documentoIdentidadProveedor;
         this.productos = productos;
         this.fecha = fecha;
+    }
+
+    public VolanteDTOReactivo(){
+
     }
 
     public String getId() {
@@ -48,11 +52,11 @@ public class VolanteDTOReactivo {
         this.documentoIdentidadProveedor = documentoIdentidadProveedor;
     }
 
-    public List<String> getProductos() {
+    public List<ProductoDTOReactivo> getProductos() {
         return productos;
     }
 
-    public void setProductos(List<String> productos) {
+    public void setProductos(List<ProductoDTOReactivo> productos) {
         this.productos = productos;
     }
 

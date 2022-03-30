@@ -18,6 +18,9 @@ public class ProductoDTOReactivo {
         this.precioUnidad = precioUnidad;
     }
 
+    public ProductoDTOReactivo(){
+
+    }
     public String getId() {
         return id;
     }

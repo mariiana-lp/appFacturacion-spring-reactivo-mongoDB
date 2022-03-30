@@ -4,10 +4,14 @@ import com.example.API_ferreteria.domain.VolanteDTOReactivo;
 import com.example.API_ferreteria.repository.IVolanteReactivoRepository;
 import com.example.API_ferreteria.services.IVolanteReactivoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public class VolanteReactivoImplService implements IVolanteReactivoService {
+@Service
+@Primary
+public class VolanteReactivoServiceImpl implements IVolanteReactivoService {
 
     @Autowired
     private IVolanteReactivoRepository iVolanteReactivoRepository;

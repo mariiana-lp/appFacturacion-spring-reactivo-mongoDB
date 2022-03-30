@@ -14,16 +14,20 @@ public class FacturaDTOReactiva {
     private LocalDate fecha;
     private String nombreCliente;
     private String vendedor; //Quien atendio al cliente
-    private List<String> productos;
+    private List<ProductoDTOReactivo> productos;
     private int totalAPagar;
 
-    public FacturaDTOReactiva(String id, LocalDate fecha, String nombreCliente, String vendedor, List<String> productos, int totalAPagar) {
+    public FacturaDTOReactiva(String id, LocalDate fecha, String nombreCliente, String vendedor, List<ProductoDTOReactivo> productos, int totalAPagar) {
         this.id = id;
         this.fecha = fecha;
         this.nombreCliente = nombreCliente;
         this.vendedor = vendedor;
         this.productos = productos;
         this.totalAPagar = totalAPagar;
+    }
+
+    public FacturaDTOReactiva(){
+
     }
 
     public String getId() {
@@ -58,11 +62,11 @@ public class FacturaDTOReactiva {
         this.vendedor = vendedor;
     }
 
-    public List<String> getProductos() {
+    public List<ProductoDTOReactivo> getProductos() {
         return productos;
     }
 
-    public void setProductos(List<String> productos) {
+    public void setProductos(List<ProductoDTOReactivo> productos) {
         this.productos = productos;
     }
 

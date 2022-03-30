@@ -5,12 +5,14 @@ import com.example.API_ferreteria.domain.ProductoDTOReactivo;
 import com.example.API_ferreteria.repository.IProductoReactivoRepository;
 import com.example.API_ferreteria.services.IProductoReactivoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
-public class ProductoReactivoImplService implements IProductoReactivoService {
+@Primary
+public class ProductoReactivoServiceImpl implements IProductoReactivoService {
 
     @Autowired
     private IProductoReactivoRepository iProductoReactivoRepository;

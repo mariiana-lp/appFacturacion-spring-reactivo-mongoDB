@@ -22,6 +22,10 @@ public class InventarioDTOReactivo {
         this.maximo = maximo;
     }
 
+    public InventarioDTOReactivo(){
+
+    }
+
     public String getId() {
         return id;
     }
