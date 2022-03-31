@@ -16,18 +16,18 @@ public class FacturaDTOReactiva {
     private final LocalDate fecha;
     private String nombreCliente;
     private String vendedor; //Quien atendio al cliente
-    private Integer totalAPagar;
+    private final Integer totalAPagar;
 
     @DBRef
     private List<ProductoDTOReactivo> productos;
 
-    public FacturaDTOReactiva(String id, String nombreCliente, String vendedor, List<ProductoDTOReactivo> productos, Integer totalAPagar) {
+    public FacturaDTOReactiva(String id, String nombreCliente, String vendedor, List<ProductoDTOReactivo> productos) {
         this.id = id;
         this.fecha = LocalDate.now();
         this.nombreCliente = nombreCliente;
         this.vendedor = vendedor;
         this.productos = productos;
-        this.totalAPagar = totalAPagar;
+        this.totalAPagar = calcularTotalAPagar();
     }
 
     public String getId() {
@@ -70,12 +70,8 @@ public class FacturaDTOReactiva {
         return totalAPagar;
     }
 
-    public void setTotalAPagar(Integer totalAPagar) {
-        this.totalAPagar = totalAPagar;
-    }
-
-    public int calculoTotalAPagar(){
-        int suma = 0;
+    public int calcularTotalAPagar(){
+        int suma = productos.stream().map(p -> p.getPrecioUnidad()).reduce(0, (a, b) -> a +b);
         return suma;
     }
 }
