@@ -22,7 +22,7 @@ public class FacturaReactivaResource {
         return this.iFacturaReactivaService.save(facturaDTOReactiva);
     }
 
-    @PutMapping("/delete/{id}")
+    @PutMapping("{id}")
     private Mono<ResponseEntity<FacturaDTOReactiva>> delete (@PathVariable("id") String id){
         return this.iFacturaReactivaService.delete(id)
                 .flatMap(facturaDTOReactiva -> Mono.just(ResponseEntity.ok(facturaDTOReactiva)))

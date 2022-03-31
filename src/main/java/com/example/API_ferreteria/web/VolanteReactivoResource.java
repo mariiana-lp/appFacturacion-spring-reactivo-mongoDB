@@ -21,7 +21,7 @@ public class VolanteReactivoResource {
         return this.iVolanteReactivoService.save(volanteDTOReactivo);
     }
 
-    @PutMapping("/delete/{id}")
+    @PutMapping("/{id}")
     private Mono<ResponseEntity<VolanteDTOReactivo>> delete (@PathVariable("id") String id){
         return this.iVolanteReactivoService.delete(id)
                 .flatMap(volanteDTOReactivo -> Mono.just(ResponseEntity.ok(volanteDTOReactivo)))
