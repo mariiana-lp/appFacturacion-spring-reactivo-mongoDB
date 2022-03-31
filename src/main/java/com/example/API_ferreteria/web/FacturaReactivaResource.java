@@ -18,11 +18,11 @@ public class FacturaReactivaResource {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    private Mono<FacturaDTOReactiva> save (FacturaDTOReactiva facturaDTOReactiva){
+    private Mono<FacturaDTOReactiva> save (@RequestBody FacturaDTOReactiva facturaDTOReactiva){
         return this.iFacturaReactivaService.save(facturaDTOReactiva);
     }
 
-    @PutMapping("delete/{id}")
+    @PutMapping("/delete/{id}")
     private Mono<ResponseEntity<FacturaDTOReactiva>> delete (@PathVariable("id") String id){
         return this.iFacturaReactivaService.delete(id)
                 .flatMap(facturaDTOReactiva -> Mono.just(ResponseEntity.ok(facturaDTOReactiva)))

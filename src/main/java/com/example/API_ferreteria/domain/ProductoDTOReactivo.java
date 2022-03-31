@@ -10,17 +10,14 @@ public class ProductoDTOReactivo {
     @Id
     private String id = UUID.randomUUID().toString().substring(0,10);
     private String nombreProducto;
-    private int precioUnidad;
+    private Integer precioUnidad;
 
-    public ProductoDTOReactivo(String id, String nombreProducto, int precioUnidad) {
+    public ProductoDTOReactivo(String id,  String nombreProducto, Integer precioUnidad) {
         this.id = id;
         this.nombreProducto = nombreProducto;
         this.precioUnidad = precioUnidad;
     }
 
-    public ProductoDTOReactivo(){
-
-    }
     public String getId() {
         return id;
     }
@@ -37,11 +34,11 @@ public class ProductoDTOReactivo {
         this.nombreProducto = nombreProducto;
     }
 
-    public int getPrecioUnidad() {
+    public Integer getPrecioUnidad() {
         return precioUnidad;
     }
 
-    public void setPrecioUnidad(int precioUnidad) {
+    public void setPrecioUnidad(Integer precioUnidad) {
         this.precioUnidad = precioUnidad;
     }
 }

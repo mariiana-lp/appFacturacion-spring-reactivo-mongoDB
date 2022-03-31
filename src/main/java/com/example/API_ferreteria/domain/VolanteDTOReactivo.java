@@ -24,9 +24,6 @@ public class VolanteDTOReactivo {
         this.fecha = fecha;
     }
 
-    public VolanteDTOReactivo(){
-
-    }
 
     public String getId() {
         return id;

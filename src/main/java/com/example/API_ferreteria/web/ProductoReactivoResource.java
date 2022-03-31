@@ -10,18 +10,25 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/p")
+@RequestMapping("/product")
 public class ProductoReactivoResource {
     @Autowired
     private IProductoReactivoService iProductoReactivoService;
 
-    @PostMapping
+    @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    private Mono<ProductoDTOReactivo> save (ProductoDTOReactivo productoDTOReactivo){
+    private Mono<ProductoDTOReactivo> save (@RequestBody  ProductoDTOReactivo productoDTOReactivo){
         return this.iProductoReactivoService.save(productoDTOReactivo);
     }
 
-    @PutMapping("delete/{id}")
+    @PutMapping("/update/{id}")
+    private Mono<ResponseEntity<ProductoDTOReactivo>> update (@PathVariable("id") String id, @RequestBody ProductoDTOReactivo productoDTOReactivo){
+        return this.iProductoReactivoService.update(id, productoDTOReactivo)
+                .flatMap(productoDTOReactivo1 -> Mono.just(ResponseEntity.ok(productoDTOReactivo)))
+                .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
+    }
+
+    @PutMapping("/delete/{id}")
     private Mono<ResponseEntity<ProductoDTOReactivo>> delete (@PathVariable("id") String id){
         return this.iProductoReactivoService.delete(id)
                 .flatMap(productoDTOReactivo -> Mono.just(ResponseEntity.ok(productoDTOReactivo)))

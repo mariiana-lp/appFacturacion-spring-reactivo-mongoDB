@@ -10,4 +10,5 @@ public interface IProductoReactivoService {
     Mono<ProductoDTOReactivo> delete (String id);
     Mono<ProductoDTOReactivo> findById (String id);
     Flux<ProductoDTOReactivo> findAll();
+    Mono<ProductoDTOReactivo> update(String id, ProductoDTOReactivo productoDTOReactivo);
 }

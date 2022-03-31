@@ -24,6 +24,16 @@ public class ProductoReactivoServiceImpl implements IProductoReactivoService {
     }
 
     @Override
+    public Mono<ProductoDTOReactivo> update (String id, ProductoDTOReactivo productoDTOReactivo){
+        return this.iProductoReactivoRepository.findById(id)
+                .flatMap(productoDTOReactivo1 -> {
+                    productoDTOReactivo1.setId(id);
+                    return save(productoDTOReactivo);
+                })
+                .switchIfEmpty(Mono.empty());
+    }
+
+    @Override
     public Mono<ProductoDTOReactivo> delete(String id) {
         return this.iProductoReactivoRepository.findById(id)
                 .flatMap(factura -> this.iProductoReactivoRepository

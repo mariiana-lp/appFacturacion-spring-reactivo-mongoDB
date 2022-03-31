@@ -10,20 +10,16 @@ public class InventarioDTOReactivo {
     @Id
     private String id = UUID.randomUUID().toString().substring(0,10);
     private String idProducto;
-    private int cantidadActual;
-    private int minimo;
-    private int maximo;
+    private Integer cantidadActual;
+    private Integer minimo;
+    private Integer maximo;
 
-    public InventarioDTOReactivo(String id, String idProducto, int cantidadActual, int minimo, int maximo) {
+    public InventarioDTOReactivo(String id, String idProducto, Integer cantidadActual, Integer minimo, Integer maximo) {
         this.id = id;
         this.idProducto = idProducto;
         this.cantidadActual = cantidadActual;
         this.minimo = minimo;
         this.maximo = maximo;
-    }
-
-    public InventarioDTOReactivo(){
-
     }
 
     public String getId() {
@@ -42,27 +38,27 @@ public class InventarioDTOReactivo {
         this.idProducto = idProducto;
     }
 
-    public int getCantidadActual() {
+    public Integer getCantidadActual() {
         return cantidadActual;
     }
 
-    public void setCantidadActual(int cantidadActual) {
+    public void setCantidadActual(Integer cantidadActual) {
         this.cantidadActual = cantidadActual;
     }
 
-    public int getMinimo() {
+    public Integer getMinimo() {
         return minimo;
     }
 
-    public void setMinimo(int minimo) {
+    public void setMinimo(Integer minimo) {
         this.minimo = minimo;
     }
 
-    public int getMaximo() {
+    public Integer getMaximo() {
         return maximo;
     }
 
-    public void setMaximo(int maximo) {
+    public void setMaximo(Integer maximo) {
         this.maximo = maximo;
     }
 }

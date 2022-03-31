@@ -1,5 +1,6 @@
 package com.example.API_ferreteria.domain;
 
+import io.swagger.models.auth.In;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,19 +16,15 @@ public class FacturaDTOReactiva {
     private String nombreCliente;
     private String vendedor; //Quien atendio al cliente
     private List<ProductoDTOReactivo> productos;
-    private int totalAPagar;
+    private Integer totalAPagar;
 
-    public FacturaDTOReactiva(String id, LocalDate fecha, String nombreCliente, String vendedor, List<ProductoDTOReactivo> productos, int totalAPagar) {
+    public FacturaDTOReactiva(String id, LocalDate fecha, String nombreCliente, String vendedor, List<ProductoDTOReactivo> productos, Integer totalAPagar) {
         this.id = id;
         this.fecha = fecha;
         this.nombreCliente = nombreCliente;
         this.vendedor = vendedor;
         this.productos = productos;
         this.totalAPagar = totalAPagar;
-    }
-
-    public FacturaDTOReactiva(){
-
     }
 
     public String getId() {
@@ -70,11 +67,11 @@ public class FacturaDTOReactiva {
         this.productos = productos;
     }
 
-    public int getTotalAPagar() {
+    public Integer getTotalAPagar() {
         return totalAPagar;
     }
 
-    public void setTotalAPagar(int totalAPagar) {
+    public void setTotalAPagar(Integer totalAPagar) {
         this.totalAPagar = totalAPagar;
     }
 }
