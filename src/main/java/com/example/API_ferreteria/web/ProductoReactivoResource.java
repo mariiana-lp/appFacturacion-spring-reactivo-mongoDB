@@ -28,7 +28,7 @@ public class ProductoReactivoResource {
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
 
-    @PutMapping("/delete/{id}")
+    @PutMapping("/{id}")
     private Mono<ResponseEntity<ProductoDTOReactivo>> delete (@PathVariable("id") String id){
         return this.iProductoReactivoService.delete(id)
                 .flatMap(productoDTOReactivo -> Mono.just(ResponseEntity.ok(productoDTOReactivo)))

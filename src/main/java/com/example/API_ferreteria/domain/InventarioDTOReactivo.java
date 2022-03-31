@@ -1,6 +1,7 @@
 package com.example.API_ferreteria.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.UUID;
@@ -9,14 +10,15 @@ import java.util.UUID;
 public class InventarioDTOReactivo {
     @Id
     private String id = UUID.randomUUID().toString().substring(0,10);
-    private String idProducto;
+    @DBRef
+    private ProductoDTOReactivo productoDTOReactivo;
     private Integer cantidadActual;
     private Integer minimo;
     private Integer maximo;
 
-    public InventarioDTOReactivo(String id, String idProducto, Integer cantidadActual, Integer minimo, Integer maximo) {
+    public InventarioDTOReactivo(String id, ProductoDTOReactivo productoDTOReactivo, Integer cantidadActual, Integer minimo, Integer maximo) {
         this.id = id;
-        this.idProducto = idProducto;
+        this.productoDTOReactivo = productoDTOReactivo;
         this.cantidadActual = cantidadActual;
         this.minimo = minimo;
         this.maximo = maximo;
@@ -28,14 +30,6 @@ public class InventarioDTOReactivo {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getIdProducto() {
-        return idProducto;
-    }
-
-    public void setIdProducto(String idProducto) {
-        this.idProducto = idProducto;
     }
 
     public Integer getCantidadActual() {
@@ -60,5 +54,13 @@ public class InventarioDTOReactivo {
 
     public void setMaximo(Integer maximo) {
         this.maximo = maximo;
+    }
+
+    public ProductoDTOReactivo getProductoDTOReactivo() {
+        return productoDTOReactivo;
+    }
+
+    public void setProductoDTOReactivo(ProductoDTOReactivo productoDTOReactivo) {
+        this.productoDTOReactivo = productoDTOReactivo;
     }
 }
