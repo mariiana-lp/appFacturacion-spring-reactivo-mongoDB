@@ -13,14 +13,17 @@ import java.util.UUID;
 public class FacturaDTOReactiva {
     @Id
     private String id = UUID.randomUUID().toString().substring(0,10);
-    private final LocalDate fecha;
+    private LocalDate fecha;
     private String nombreCliente;
     private String vendedor; //Quien atendio al cliente
-    private final Integer totalAPagar;
+    private Integer totalAPagar;
 
     @DBRef
     private List<ProductoDTOReactivo> productos;
 
+    public FacturaDTOReactiva(){
+
+    }
     public FacturaDTOReactiva(String id, String nombreCliente, String vendedor, List<ProductoDTOReactivo> productos) {
         this.id = id;
         this.fecha = LocalDate.now();
