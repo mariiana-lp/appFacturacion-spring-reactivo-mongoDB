@@ -1,6 +1,7 @@
 package com.example.API_ferreteria.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -13,6 +14,7 @@ public class VolanteDTOReactivo {
     private String id = UUID.randomUUID().toString().substring(0,10);
     private String nombreProveedor;
     private String documentoIdentidadProveedor;
+    @DBRef
     private List<ProductoDTOReactivo> productos;
     private LocalDate fecha;
 
@@ -21,7 +23,7 @@ public class VolanteDTOReactivo {
         this.nombreProveedor = nombreProveedor;
         this.documentoIdentidadProveedor = documentoIdentidadProveedor;
         this.productos = productos;
-        this.fecha = fecha;
+        this.fecha = LocalDate.now();
     }
 
 

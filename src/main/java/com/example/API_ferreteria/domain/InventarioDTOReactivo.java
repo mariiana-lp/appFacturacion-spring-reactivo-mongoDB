@@ -16,6 +16,10 @@ public class InventarioDTOReactivo {
     private Integer minimo;
     private Integer maximo;
 
+    public InventarioDTOReactivo(){
+
+    }
+
     public InventarioDTOReactivo(String id, ProductoDTOReactivo productoDTOReactivo, Integer cantidadActual, Integer minimo, Integer maximo) {
         this.id = id;
         this.productoDTOReactivo = productoDTOReactivo;
