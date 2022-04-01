@@ -18,6 +18,9 @@ public class VolanteDTOReactivo {
     private List<ProductoDTOReactivo> productos;
     private LocalDate fecha;
 
+    public VolanteDTOReactivo(){
+
+    }
     public VolanteDTOReactivo(String id, String nombreProveedor, String documentoIdentidadProveedor, List<ProductoDTOReactivo> productos, LocalDate fecha) {
         this.id = id;
         this.nombreProveedor = nombreProveedor;
