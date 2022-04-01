@@ -12,6 +12,9 @@ public class ProductoDTOReactivo {
     private String nombreProducto;
     private Integer precioUnidad;
 
+    public ProductoDTOReactivo(){
+    }
+
     public ProductoDTOReactivo(String id,  String nombreProducto, Integer precioUnidad) {
         this.id = id;
         this.nombreProducto = nombreProducto;
