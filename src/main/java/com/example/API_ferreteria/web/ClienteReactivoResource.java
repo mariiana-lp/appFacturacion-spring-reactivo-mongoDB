@@ -1,7 +1,6 @@
 package com.example.API_ferreteria.web;
 
 import com.example.API_ferreteria.domain.ClienteDTOReactivo;
-import com.example.API_ferreteria.domain.ProductoDTOReactivo;
 import com.example.API_ferreteria.services.IClienteReactivoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@CrossOrigin(origins = "http://localhost:3001", maxAge = 3600)
 @RestController
 @RequestMapping("/clientes")
 public class ClienteReactivoResource {
