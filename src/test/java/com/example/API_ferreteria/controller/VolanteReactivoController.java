@@ -51,6 +51,6 @@ public class VolanteReactivoController {
         Mockito.when(service.findAll()).thenReturn(flux);
 
         webTestClient.get().uri("/volante").exchange().expectStatus();
-        
+
     }
 }
